@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15e41e6a4c649514f92b8e0b44f4d184, type: 3}
+  m_Name: ConfigRegions
+  m_EditorClassIdentifier: Assembly-CSharp::Config
+  StandRegionMat:
+    m_AssetGUID: 1efe17c05b4f3e04e8d0809e9a7aa3f0
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  ActiveRegionMat:
+    m_AssetGUID: 53af2dff29a1de447ae33dee0c9345e6
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  CurrentActivRegionMat:
+    m_AssetGUID: 7f3176c05ae56b14eb991f51ed14d5bf
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  FocusRegionMat:
+    m_AssetGUID: 6dabfe7d1678bcd4dba6c2a918447c7c
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  FailRegionMat:
+    m_AssetGUID: 29e2f8d0b035bf5448a9850cd543e79a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
