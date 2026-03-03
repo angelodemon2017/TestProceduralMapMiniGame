@@ -48,7 +48,7 @@ public class RegionsViewController : MonoBehaviour
 
             go.name = $"Region_{region.Id:000}";
 
-            var mesh = ProceduralRegion.CreatePolygonMesh(region.Vertices, region.Center, 0f, _generateConfigs.RegionInset);
+            var mesh = ProceduralRegion.CreateRegionMesh(region.Vertices, region.Center, 0f, _generateConfigs.RegionInset);
             rv.MeshFilter.mesh = mesh;
             rv.InitRegion(region);
 

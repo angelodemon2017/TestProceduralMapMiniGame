@@ -31,6 +31,7 @@ public class MainWindow : UIWindowBase<WindowModelBase>
     {
         _titleText.text = $"regions: {openRegions.Opens}/{openRegions.Max}";
         _titleText.color = Color.white;
+        _restartButton.interactable = openRegions.Opens != 1;
     }
 
     private void OnHandle(WinSignal win)
@@ -55,7 +56,6 @@ public class MainWindow : UIWindowBase<WindowModelBase>
     private void OnNewGameButtonClicked()
     {
         _signalBus.Fire(new StartNewGameSignal());
-        _restartButton.interactable = true;
     }
 
     private void RestartButtonClicked()

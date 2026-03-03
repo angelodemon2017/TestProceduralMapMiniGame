@@ -41,7 +41,7 @@ public class GeneratorService : IDisposable
 
         var vor = new Voronator(sites, VoronatorSharp.Vector2.zero, new VoronatorSharp.Vector2(_mapSize.x, _mapSize.y));
 
-        List<Region> regions = new List<Region>();
+        List<RegionDataModel> regions = new List<RegionDataModel>();
 
         for (int i = 0; i < sites.Length; i++)
         {
@@ -50,7 +50,7 @@ public class GeneratorService : IDisposable
 
             var neighbors = new List<int>(vor.ClippedNeighbors(i));
 
-            regions.Add(new Region
+            regions.Add(new RegionDataModel
             {
                 Id = i,
                 Vertices = verts.ToUniVectors2(),

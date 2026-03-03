@@ -6,19 +6,19 @@ using Zenject;
 
 public class RegionsHandlerService : IDisposable
 {
-    private readonly RegionsHandlerModel _regionsHandlerModel;
+    private readonly RegionsHandlerServiceModel _regionsHandlerModel;
     private readonly GenerateConfigs _generateConfigs;
     private readonly SignalBus _signalBus;
 
     private int _currentId => _regionsHandlerModel.CurrentId;
     private int _centerId = -1;
-    private List<Region> _regions = new List<Region>();
-    private Dictionary<int, Region> _cashRegions = new Dictionary<int, Region>();
+    private List<RegionDataModel> _regions = new List<RegionDataModel>();
+    private Dictionary<int, RegionDataModel> _cashRegions = new Dictionary<int, RegionDataModel>();
 
     private Vector2 _mapSize => _generateConfigs.MapSize;
 
     public RegionsHandlerService(
-        RegionsHandlerModel regionsHandlerModel,
+        RegionsHandlerServiceModel regionsHandlerModel,
         GenerateConfigs generateConfigs,
         SignalBus signalBus)
     {
@@ -151,7 +151,7 @@ public class RegionsHandlerService : IDisposable
         _centerId = -1;
         Vector2 mapCenter = new Vector2(_mapSize.x / 2f, _mapSize.y / 2f);
 
-        Region mostCentral = null;
+        RegionDataModel mostCentral = null;
         float minDistance = float.MaxValue;
 
         foreach (var region in _regions)

@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c47fbe32ac8c342b5f3e9541100a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectContext
-  _config: {fileID: 11400000, guid: 8907dc519b7b6d1458d1230a5d000c89, type: 2}
+  _materialRegionConfig: {fileID: 11400000, guid: 8907dc519b7b6d1458d1230a5d000c89, type: 2}
   _generateConfig: {fileID: 11400000, guid: 23cbfa47e042a3445ac50450b4aae7ee, type: 2}
   _canvasPrefab: {fileID: 6814334125399795375, guid: 992a96a42c7e2184e871356080e6b311, type: 3}
   _regionViewPrefab: {fileID: 8822549194008081983, guid: 6275b4f0ba3ce5943bbe4db01d513cc6, type: 3}

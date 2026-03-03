@@ -3,7 +3,7 @@ using Zenject;
 
 public class ProjectInstaller : MonoInstaller
 {
-    [SerializeField] private Config _config;
+    [SerializeField] private MaterialRegionConfig _materialRegionConfig;
     [SerializeField] private GenerateConfigs _generateConfig;
 
     [SerializeField] private Canvas _canvasPrefab;
@@ -22,7 +22,7 @@ public class ProjectInstaller : MonoInstaller
 
     private void InstallConfigs()
     {
-        Container.BindInstance(_config).AsSingle();
+        Container.BindInstance(_materialRegionConfig).AsSingle();
         Container.BindInstance(_generateConfig).AsSingle();
     }
 
@@ -39,8 +39,8 @@ public class ProjectInstaller : MonoInstaller
 
     private void InstallServices()
     {
-        Container.BindInterfacesAndSelfTo<RegionsHandlerModel>().AsSingle();
-        Container.BindInterfacesAndSelfTo<ConfigService>().AsSingle();
+        Container.BindInterfacesAndSelfTo<RegionsHandlerServiceModel>().AsSingle();
+        Container.BindInterfacesAndSelfTo<MaterialRegionConfigService>().AsSingle().NonLazy();
         Container.BindInterfacesAndSelfTo<GeneratorService>().AsSingle();
         Container.BindInterfacesAndSelfTo<RegionsHandlerService>().AsSingle();
         Container.BindInterfacesAndSelfTo<UIService>().AsSingle();

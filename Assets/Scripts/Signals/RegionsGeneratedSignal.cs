@@ -2,5 +2,5 @@
 
 public struct RegionsGeneratedSignal
 {
-    public List<Region> Regions;
+    public List<RegionDataModel> Regions;
 }

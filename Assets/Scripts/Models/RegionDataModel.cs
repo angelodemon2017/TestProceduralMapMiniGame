@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Region
+public class RegionDataModel
 {
     public int Id;
     public bool IsFocused;

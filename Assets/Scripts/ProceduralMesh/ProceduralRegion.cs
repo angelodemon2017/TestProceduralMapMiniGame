@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ProceduralRegion
 {
-    public static Mesh CreatePolygonMesh(List<Vector2> points2D, Vector2 center2D, float zHeight, float regionInset)
+    public static Mesh CreateRegionMesh(List<Vector2> points2D, Vector2 center2D, float zHeight, float regionInset = 0f)
     {
         Mesh mesh = new Mesh();
-        mesh.name = "ProceduralRegionMesh";
+        mesh.name = Dicts.FixNames.ProceduralRegionMeshName;
 
         int n = points2D.Count;
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Config", menuName = "Scriptable Objects/Config")]
-public class Config : ScriptableObject
+[CreateAssetMenu(fileName = "MaterialRegionConfig", menuName = "Scriptable Objects/MaterialRegionConfig")]
+public class MaterialRegionConfig : ScriptableObject
 {
     public AssetReferenceMaterial StandRegionMat;
     public AssetReferenceMaterial ActiveRegionMat;

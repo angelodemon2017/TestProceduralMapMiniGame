@@ -5,18 +5,17 @@ using Zenject;
 [RequireComponent(typeof(MeshCollider), typeof(MeshFilter), typeof(MeshRenderer))]
 public class RegionView : MonoBehaviour
 {
-    [SerializeField] private Config _config;
     [SerializeField] private MeshCollider _meshCollider;
     [SerializeField] private MeshFilter _meshFilter;
     [SerializeField] private MeshRenderer _meshRenderer;
 
-    private RegionsHandlerModel _regionsHandlerModel;
-    private ConfigService _configService;
+    private RegionsHandlerServiceModel _regionsHandlerModel;
+    private MaterialRegionConfigService _materailRegionConfigService;
     private SignalBus _signalBus;
 
     [SerializeField] private Text _text;
     [SerializeField] private Canvas _canvas;
-    private Region _region;
+    private RegionDataModel _region;
     
     private int _id => _region.Id;
     private bool _isOpen => _region.IsOpen;
@@ -32,11 +31,11 @@ public class RegionView : MonoBehaviour
 
     [Inject]
     private void Construct(
-        ConfigService configService,
+        MaterialRegionConfigService configService,
         SignalBus signalBus,
-        RegionsHandlerModel regionsHandlerModel)
+        RegionsHandlerServiceModel regionsHandlerModel)
     {
-        _configService = configService;
+        _materailRegionConfigService = configService;
         _signalBus = signalBus;
         _regionsHandlerModel = regionsHandlerModel;
 
@@ -52,11 +51,11 @@ public class RegionView : MonoBehaviour
     {
         if (!_isOpen)
         {
-            ApplyMaterial(_configService.GetFailRegionMaterial());
+            ApplyMaterial(_materailRegionConfigService.GetFailRegionMaterial());
         }
     }
 
-    public void InitRegion(Region _region)
+    public void InitRegion(RegionDataModel _region)
     {
         this._region = _region;
         _meshCollider.sharedMesh = _meshFilter.mesh;
@@ -83,10 +82,10 @@ public class RegionView : MonoBehaviour
 
     public void OnUpdated()
     {
-        ApplyMaterial(_regionsHandlerModel.CurrentId == _id ? _configService.GetCurrentRegionMaterial() :
-           _region.IsOpen ? _configService.GetActiveRegionMaterial() :
-           _region.IsFocused ? _configService.GetFocusedMaterial() :
-           _configService.GetStandartMaterial());
+        ApplyMaterial(_regionsHandlerModel.CurrentId == _id ? _materailRegionConfigService.GetCurrentRegionMaterial() :
+           _region.IsOpen ? _materailRegionConfigService.GetActiveRegionMaterial() :
+           _region.IsFocused ? _materailRegionConfigService.GetFocusedMaterial() :
+           _materailRegionConfigService.GetStandartMaterial());
     }
 
     private void ApplyMaterial(Material material)

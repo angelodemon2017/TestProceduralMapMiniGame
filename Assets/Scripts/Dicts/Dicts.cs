@@ -4,4 +4,9 @@
     {
         public const string Canvas = "Canvas";
     }
+
+    public static class FixNames
+    {
+        public const string ProceduralRegionMeshName = "ProceduralRegionMesh";
+    }
 }
